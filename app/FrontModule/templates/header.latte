@@ -1,0 +1,18 @@
+<header>
+    <div class="main">
+        <div class="header clear" style="margin-bottom:20px;">
+            <a n:href="Homepage:default" class="logo" title="Photo story"><img  src="/images/logo.png" class="img-indent " alt=""  /></a>
+            <nav>
+                <ul class="top-menu" id="c" style="margin-top: 17px;">
+                    <li><a n:href="Homepage:default" {ifCurrent Homepage:*}class="active"{/ifCurrent}>Home</a></li>
+                    <li><a n:href="Place:default" {ifCurrent Place:*}class="active"{/ifCurrent}>Photos</a></li>
+                    <li><a n:href="History:default" {ifCurrent History:*}class="active"{/ifCurrent}>History</a></li>
+                </ul>
+            </nav>
+        </div>
+        {ifset #slide}
+           {include #slide}
+         {else}
+            </div>
+        {/ifset}
+</header>

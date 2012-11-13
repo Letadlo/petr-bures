@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="description" content="Petr Bureš focení Vašich akcí">
+        <meta name="robots" content="index,follow" />
+        <meta name="author" content="Project: Opravil Jan" />
+        <meta name="author" content="Graphic: Opravil Jan" />
+        <meta name="author" content="Coding: Opravil Jan" />
+        <meta name="author" content="Programming: Opravil Jan" />
+        <meta name="copyright" content="petr-bures.com" />
+        <meta name="googlebot" content="index,follow,snippet,archive" />
+        <meta name="keywords" content="petr bures, fotografie, fotky, photos, akce, kluby" />
+        <meta name="autosize" content="off" />
+        {ifset #metaDescription}
+           {include #metaDescription}
+        {else}
+            <meta name="description" content="Petr Bureš - focení vašich akcí" />
+        {/ifset}
+        {ifset #meta}
+           {include #meta}
+        {/ifset}
+        <title>{include #title}</title>
+
+        <link rel="stylesheet" href="{$basePath}/css/reset.css" type="text/css" media="all">
+        <link rel="stylesheet" href="{$basePath}/css/layout.css" type="text/css" media="all">
+        <link rel="stylesheet" href="{$basePath}/css/style.css" type="text/css" media="all">
+        <link rel="stylesheet" href="{$basePath}/css/screen.css" type="text/css" media="all">
+        <link rel="stylesheet" href="{$basePath}/css/fancybox/jquery.fancybox-1.3.4.css" type="text/css" media="all">
+        <link rel="stylesheet" href="{$basePath}/css/paginator.css" type="text/css" media="all">
+
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+
+
+        <script src="{$basePath}/js/jquery-1.4.2.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/jquery.bgpos.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/coin-slider.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/script.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/script_menu.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/bgstretcher.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //  Initialize Backgound Stretcher
+                $(document).bgStretcher({
+                    images: ['/images/sample_1.jpg'], imageWidth: 1400, imageHeight: 1650
+                });
+            });
+        </script>
+
+        <script src="{$basePath}/js/cufon-yui.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/cufon-replace.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/Khmer_UI_400.font.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/Tw_Cen_MT_Condensed_400.font.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/FeliciaExtended_italic_400.font.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/FeliciaExtended_italic_400.font.js" type="text/javascript"></script>
+        <script src="{$basePath}/js/myriad-cond_400.font.js" type="text/javascript"></script>
+        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+        <script type="text/javascript">
+            preloadImages([
+                '/images/bg.gif', 
+                '/images/slider_button_act.gif'
+            ]);
+        </script>
+        <!--[if IE 6]>
+            <script src="http://info.template-help.com/files/ie6_warning/ie6_script_other.js" type="text/javascript"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="{$basePath}/js/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script type="text/javascript" src="{$basePath}/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+	{block head}{/block}
+</head>
+
+<body>
+	<div n:foreach="$flashes as $flash" class="flash {$flash->type}">{$flash->message}</div>
+        {includeblock 'header.latte'}
+        {include #content}
+        {includeblock 'footer.latte'}
+        <script type="text/javascript"> Cufon.now(); </script>
+        <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-33854653-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        </script>
+</body>
+</html>

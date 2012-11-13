@@ -1,0 +1,84 @@
+{block title}
+    Petr Bureš
+{/block}
+{block metaDescription}
+    <meta name="description" content="Aktuální akce
+        {foreach $events as $event}
+            {$event->getName()} - {$event->getDate()->format("d. m. Y")} 
+        {/foreach}
+    " />
+{/block}
+{block slide}
+        <div class="row-slider clear">
+            <div id="coin-slider">
+                {foreach $slidePictures as $picture}
+                    {control "slide-".$picture->getIdPicture()}
+                {/foreach}
+            </div>
+        </div>
+        <div class="extra-img">
+            <a n:href="Event:week" class="link-top"><span class="text11">Akce</span><br  />aktuálního<br  /><span class="text11">týdne</span></a>
+        </div>
+    </div>
+{/block}
+{block content}
+<div class="main" id="page1">
+    <section id="content">
+        <article>
+            <div class="inside">
+                <div class="content clear">
+                    <div class="maxheight col-1 bg-col">
+                        <div class="col-indentb">
+                            <div class="clear">
+                                <h3>Petr Bureš</h3>
+                                <div class="indent-text">
+                                    <strong>fotograf pro Vaše akce.</strong>
+                                    <p class="indent-top"></p>
+                                    <!--<p class="button-indent11"><a href="#" class="button">read more</a></p>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="maxheight col-2 bg-col">
+                        <div class="col-indenta">
+                            <div class="clear">
+                                <ul class="list1">
+                                    <li class="extra-indent-list">
+                                        <a href="#">
+                                            <span class="marker1 marker">Twitter</span>
+                                            <span class="list1-text">twitter.com/requested/petr-bures</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.facebook.com/profile.php?id=785754439" rel="external">
+                                            <span class="marker2 marker">facebook</span>
+                                            <span class="list1-text">facebookcom/petr-bures</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:foto@petr-bures.com">
+                                            <span class="marker3 marker">email</span>
+                                            <span class="list1-text">foto@petr-bures.com</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="gallery">
+                    {foreach $events as $event}
+                    {if ($iterator->counter % 4) == 0}
+                        <div class="right-none">
+                            {control "eventPreview-".$event->getIdEvent()}
+                        </div>
+                    {else}
+                        {control "eventPreview-".$event->getIdEvent()}
+                    {/if}
+                {/foreach}
+                </ul>
+            </div>
+        </article>  
+    </section>
+</div>
+{/block}
